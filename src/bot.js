@@ -23,11 +23,20 @@ bot.onText(/\/echo (.+)/, (msg, match) => {
 // messages.
 bot.on('message', (msg) => {
   const chatId = msg.chat.id;
-
   const timeMsg = new Date()
-
+  const hourmsg = timeMsg.getHours() 
+  
   console.log(timeMsg)
   console.log(msg)
+
+  if (hourmsg > 9 && hourmsg <18 ) {
+    console.log('https://faesa.br');
+  } else {
+    console.log('Digite seu e-mail:')
+    
+  }
+
+  
 
   // send a message to the chat acknowledging receipt of their message
   bot.sendMessage(chatId, 'Received your message');
